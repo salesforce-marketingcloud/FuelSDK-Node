@@ -26,6 +26,9 @@ restRouter.get( '/test-rest', function( req, res ) {
 			res.status(500).send( err ); 
 	
 });
+
+// exporting the router
+module.exports = restRouter;
 </pre>
 
 ## Example SOAP Usage:

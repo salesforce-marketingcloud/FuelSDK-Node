@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:ExactTarget/fuelsdk-node.git"
+    "url": "git@github.com:timsim00/fuelsdk-node.git"
   },
   "author": {
     "name": "Drew Simmons",
@@ -32,9 +32,9 @@
   },
   "gitHead": "",
   "bugs": {
-    "url": "https://github.com/ExactTarget/fuelsdk-node/issues"
+    "url": "https://github.com/timsim00/fuelsdk-node/issues"
   },
-  "homepage": "https://github.com/ExactTarget/fuelsdk-node",
+  "homepage": "https://github.com/timsim00/fuelsdk-node",
   "_id": "fuelsdk-node@1.0.0",
   "_shasum": "",
   "_from": "fuelsdk-node@>=1.0.0 <2.0.0",
