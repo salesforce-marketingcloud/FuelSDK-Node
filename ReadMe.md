@@ -2,6 +2,7 @@
 
 ## Example REST Usage:
 
+<pre>
 var express     = require( 'express' );
 var restRouter = express.Router();
 var config = require( 'config' );
@@ -25,10 +26,11 @@ restRouter.get( '/test-rest', function( req, res ) {
 			res.status(500).send( err ); 
 	
 });
-
+</pre>
 
 ## Example SOAP Usage:
 
+<pre>
 var express     = require( 'express' );
 var soapRouter = express.Router();
 var config = require( 'config' );
@@ -67,3 +69,4 @@ soapRouter.get( '/test-soap', function( req, res ) {
 
 // exporting the router
 module.exports = soapRouter;
+</pre>
