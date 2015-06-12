@@ -4,54 +4,35 @@
   "description": "Node SDK for performing REST, SOAP, and Auth API calls with Salesforce Marketing Cloud Fuel.",
   "main": "./lib/ET_Client.js",
   "scripts": {
-    "test": "grunt && ./node_modules/mocha/bin/mocha --reporter=spec test/specs/*.js"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:timsim00/fuelsdk-node.git"
   },
-  "author": {
-    "name": "Drew Simmons",
-    "email": "simmons.drew@gmail.com"
-  },
+  "author": "Drew Simmons <simmons.drew@gmail.com>",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "body-parser": "~1.12.0",
-    "chai": "~2.1.1",
-    "grunt": "~0.4.5",
-    "grunt-bump": "~0.3.0",
-    "grunt-contrib-jshint": "~0.11.0",
-    "grunt-jscs": "~1.8.0",
-    "mocha": "~2.2.1",
-    "sinon": "~1.13.0"
   },
   "dependencies": {
     "fuel-auth": "^1.0.1",
     "fuel-rest": "^1.0.0",
     "fuel-soap": "^1.1.0"
   },
-  "gitHead": "",
   "bugs": {
     "url": "https://github.com/timsim00/fuelsdk-node/issues"
   },
   "homepage": "https://github.com/timsim00/fuelsdk-node",
-  "_id": "fuelsdk-node@1.0.0",
-  "_shasum": "",
-  "_from": "fuelsdk-node@>=1.0.0 <2.0.0",
-  "_npmVersion": "2.7.4",
-  "_nodeVersion": "0.12.2",
-  "_npmUser": {
-    "name": "timsim00",
-    "email": "simmons.drew@gmail.com"
-  },
-  "maintainers": [
-
-  ],
-  "dist": {
-    "shasum": "",
-    "tarball": "http://registry.npmjs.org/fuelsdk-node/-/fuelsdk-node-1.0.0.tgz"
-  },
+  "maintainers": [],
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/fuelsdk-node/-/fuelsdk-node-1.0.0.tgz",
-  "readme": "ERROR: No README data found!"
+  "keywords": [
+    "fuel",
+    "exacttarget",
+    "salesforce",
+    "marketing",
+    "cloud",
+    "soap",
+    "rest",
+    "auth",
+    "sdk"
+  ]
 }
