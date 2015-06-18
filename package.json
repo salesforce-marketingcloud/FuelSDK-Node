@@ -1,18 +1,16 @@
 {
   "name": "fuelsdk-node",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Node SDK for performing REST, SOAP, and Auth API calls with Salesforce Marketing Cloud Fuel.",
   "main": "./lib/ET_Client.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git@github.com:timsim00/fuelsdk-node.git"
   },
   "author": "Drew Simmons <simmons.drew@gmail.com>",
   "license": "BSD-3-Clause",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
     "fuel-auth": "^1.0.1",
     "fuel-rest": "^1.0.0",
