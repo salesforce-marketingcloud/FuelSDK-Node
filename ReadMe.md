@@ -2,8 +2,14 @@
 
 ## Note:
 
-This module is in the process of beging built out. Target completion date: 2015/08/01
+This module is in the process of being built out. Target completion date: 2015/08/01
 
+## Available objects in this version:
+
+Campaign
+Data Extension
+Data Extension Column
+Data Extension Row
 
 ## Usage:
 
