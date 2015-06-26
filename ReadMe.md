@@ -7,6 +7,8 @@ This module is in the process of being built out. Target completion date: 2015/0
 ## Available objects in this version:
 
 * Campaign
+* Campaign Asset
+* Content Area
 * Data Extension
 * Data Extension Column
 * Data Extension Row
