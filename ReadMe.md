@@ -12,6 +12,18 @@ This module is in the process of being built out. Target completion date: 2015/0
 * Data Extension
 * Data Extension Column
 * Data Extension Row
+* Email
+* Folder
+* List
+* List Subscriber
+* Subscriber
+* Triggered Send
+* Bounce Event
+* Click Event
+* Open Event
+* Sent Event
+* Unsub Event
+
 
 ## Usage:
 
