@@ -1,6 +1,6 @@
 {
   "name": "fuelsdk-node",
-  "version": "1.1.8",
+  "version": "2.0.0",
   "description": "Node SDK for performing REST, SOAP, Auth, and js object API calls with Salesforce Marketing Cloud Fuel.",
   "main": "./lib/ET_Client.js",
   "scripts": {},
@@ -13,7 +13,7 @@
   "devDependencies": {},
   "dependencies": {
     "fuel-auth": "^2.0.0",
-    "fuel-rest": "^1.0.0",
+    "fuel-rest": "^2.0.0",
     "fuel-soap": "^1.1.0"
   },
   "bugs": {
