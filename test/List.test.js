@@ -44,6 +44,12 @@ describe('List', function () {
 
     describe('Get', () => {
         const props = ['ID'];
+        it('should fail if no props passed', done => {
+            client.list().get(err => {
+                assert(err);
+                done();
+            });
+        });
         it('should get it if createdListId is passed', done => {
             const filter = {
                 leftOperand: 'ID',
