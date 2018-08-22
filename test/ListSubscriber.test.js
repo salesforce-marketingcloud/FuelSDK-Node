@@ -12,7 +12,7 @@ describe('ListSubscriber', function () {
         client = new ET_Client(clientId, clientSecret, origin);
     });
 
-    describe('List', () => {
+    describe('Get', () => {
         it('should return an object with items', done => {
             const props = ['ID'];
             client.listSubscriber({props}).get((err, response) => {
