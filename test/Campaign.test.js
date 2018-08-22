@@ -43,7 +43,7 @@ describe('Campaign', function () {
     describe('Get', () => {
         it('should fail if no props passed', done => {
             client.campaign().get(err => {
-                assert(!!err);
+                assert(err);
                 done();
             });
         });

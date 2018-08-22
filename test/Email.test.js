@@ -3,10 +3,10 @@ const {clientId, clientSecret, origin} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
-describe('ContentArea', function () {
+describe('Email', function () {
 
     this.timeout(5000);
-    let client, createdContentAreaId;
+    let client, createdEmailId;
 
     before(() => {
         client = new ET_Client(clientId, clientSecret, origin);
@@ -15,7 +15,7 @@ describe('ContentArea', function () {
     describe('List', () => {
         it('should return an object with items', done => {
             const props = ['ID'];
-            client.contentArea({props}).list((err, response) => {
+            client.email({props}).list((err, response) => {
                 if (err) throw new Error(err);
                 assert.equal(response.res.statusCode, 200);
                 assert(Array.isArray(response.body.Results));
@@ -27,18 +27,20 @@ describe('ContentArea', function () {
     describe('Post', () => {
         it('should create', done => {
             const props = {
-                CustomerKey: 'CustomerKey12',
-                Name: 'Some content area name12',
-                Content: 'Some content area description',
+                CustomerKey: 'CustomerKey',
+                Name: 'Some email name',
+                Subject: 'Some email subject',
+                HTMLBody: 'Some email content'
             };
-            client.contentArea({props}).post((err, response) => {
+            client.email({props}).post((err, response) => {
                 if (err) throw new Error(err);
-                createdContentAreaId = response.body.Results[0].NewID;
-                const {CustomerKey, Name, Content} = response.body.Results[0].Object;
+                createdEmailId = response.body.Results[0].NewID;
+                const {CustomerKey, Name, Subject, HTMLBody} = response.body.Results[0].Object;
                 assert.equal(response.res.statusCode, 200);
                 assert.equal(CustomerKey, props.CustomerKey);
                 assert.equal(Name, props.Name);
-                assert.equal(Content, props.Content);
+                assert.equal(Subject, props.Subject);
+                assert.equal(HTMLBody, props.HTMLBody);
                 done();
             });
         });
@@ -47,22 +49,22 @@ describe('ContentArea', function () {
     describe('Get', () => {
         const props = ['ID'];
         it('should fail if no props passed', done => {
-            client.contentArea().get(err => {
+            client.email().get(err => {
                 assert(err);
                 done();
             });
         });
-        it('should get it if createdContentAreaId is passed', done => {
+        it('should get it if createdEmailId is passed', done => {
             const filter = {
                 leftOperand: 'ID',
                 operator: 'equals',
-                rightOperand: createdContentAreaId
+                rightOperand: createdEmailId
             };
-            client.contentArea({props, options: {filter}}).get((err, response) => {
+            client.email({props, options: {filter}}).get((err, response) => {
                 if (err) throw new Error(err);
                 assert.equal(response.res.statusCode, 200);
                 assert.equal(response.body.Results.length, 1);
-                assert.equal(response.body.Results[0].ID, createdContentAreaId);
+                assert.equal(response.body.Results[0].ID, createdEmailId);
                 done();
             });
         });
@@ -72,31 +74,31 @@ describe('ContentArea', function () {
                 operator: 'equals',
                 rightOperand: 1234567890
             };
-            client.contentArea({props, options: {filter}}).get((err, response) => {
+            client.email({props, options: {filter}}).get((err, response) => {
                 if (err) throw new Error(err);
                 assert.equal(response.body.Results.length, 0);
                 done();
             });
         });
     });
-    
+
     describe('Delete', () => {
         it('should fail if no props passed', done => {
-            client.contentArea().delete(err => {
+            client.email().delete(err => {
                 assert(err);
                 done();
             });
         });
-        it('should delete it if createdContentAreaId is passed', done => {
-            const props = {ID: createdContentAreaId};
-            client.contentArea({props}).delete((err, response) => {
+        it('should delete it if createdEmailId is passed', done => {
+            const props = {ID: createdEmailId};
+            client.email({props}).delete((err, response) => {
                 if (err) throw new Error(err);
                 assert.equal(response.res.statusCode, 200);
                 done();
             });
         });
         it('should error 404 if random id is passed', done => {
-            client.contentArea({ID: 1234567890}).delete(err => {
+            client.email({ID: 1234567890}).delete(err => {
                 assert(err);
                 done();
             });
