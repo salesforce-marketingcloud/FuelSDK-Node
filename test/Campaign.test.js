@@ -17,8 +17,7 @@ describe('Campaign', function () {
             client.campaign().list((err, response) => {
                 if (err) throw new Error(err);
                 assert.equal(response.res.statusCode, 200);
-                assert.equal(typeof response.body, 'object');
-                assert.equal(Array.isArray(response.body.items), true);
+                assert(Array.isArray(response.body.items));
                 done();
             });
         });
@@ -33,7 +32,6 @@ describe('Campaign', function () {
             client.campaign({props}).post((err, response) => {
                 if (err) throw new Error(err);
                 assert.equal(response.res.statusCode, 200);
-                assert.equal(typeof response.body, 'object');
                 assert.equal(response.body.name, props.name);
                 assert.equal(response.body.description, props.description);
                 createdCampaignId = response.body.id;
@@ -53,7 +51,7 @@ describe('Campaign', function () {
             client.campaign({id: createdCampaignId}).get((err, response) => {
                 if (err) throw new Error(err);
                 assert.equal(response.res.statusCode, 200);
-                assert.equal(typeof response.body, 'object');
+                assert.equal(response.body.id, createdCampaignId);
                 done();
             });
         });
