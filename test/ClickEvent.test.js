@@ -15,7 +15,7 @@ describe('ClickEvent', function () {
     describe('Get', () => {
         it('should return an object with items', done => {
             const props = ['ID'];
-            client.listSubscriber({props}).get((err, response) => {
+            client.clickEvent({props}).get((err, response) => {
                 if (err) throw new Error(err);
                 assert.equal(response.res.statusCode, 200);
                 assert(Array.isArray(response.body.Results));
