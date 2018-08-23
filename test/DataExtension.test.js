@@ -42,10 +42,8 @@ describe('DataExtension', function () {
                 }
             };
             client.dataExtension({props}).post((err, response) => {
-                console.log(`err`, err);
                 if (err) throw new Error(err);
                 createdDataExtensionId = response.body.Results[0].NewObjectID;
-                console.log(`response.body.Results[0]`, response.body.Results[0]);
                 const {Name, Description} = response.body.Results[0].Object;
                 assert.equal(response.res.statusCode, 200);
                 assert.equal(Name, props.Name);
