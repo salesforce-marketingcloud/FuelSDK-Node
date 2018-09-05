@@ -114,8 +114,9 @@ describe('CampaignAsset', function () {
 // HELPER FUNCTIONS
 function createAsset(client) {
     const uri = `${client.restClient.origin}/asset/v1/content/assets`;
-    const body = JSON.stringify({name: 'NTO Welcome Series Email2', assetType: {name: 'templatebasedemail', id: 207}});
+    const body = JSON.stringify({name: 'NTO Welcome Series Email', assetType: {name: 'templatebasedemail', id: 207}});
     return client.restClient.post({uri, body}).then(response => {
+        if (!response.body.id) return Promise.reject(response.body.validationErrors[0].message);
         return response.body.id;
     });
 }
