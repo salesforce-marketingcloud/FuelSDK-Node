@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {clientId, clientSecret, origin} = require('./test.config');
+const {clientId, clientSecret, origin, authOrigin} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
@@ -9,7 +9,7 @@ describe('Folder', function () {
     let client, createdFolderId, firstFolderInList;
 
     before(() => {
-        client = new ET_Client(clientId, clientSecret, origin);
+        client = new ET_Client({clientId, clientSecret, origin, authOrigin});
     });
 
     describe('List', () => {
@@ -32,7 +32,7 @@ describe('Folder', function () {
                 Name: 'Some folder name124',
                 Description: 'Some folder description',
                 ContentType: 'EMAIL',
-                ParentFolder: {ID: firstFolderInList},
+                ParentFolder: {ID: firstFolderInList}
             };
             client.folder({props}).post((err, response) => {
                 if (err) throw new Error(err);

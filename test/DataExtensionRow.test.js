@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {clientId, clientSecret, origin} = require('./test.config');
+const {clientId, clientSecret, origin, authOrigin} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
@@ -8,10 +8,10 @@ describe('DataExtensionRow', function () {
     this.timeout(10000);
     const dataExtensionName = 'TestDataExtensionName1';
     const dataExtensionRowKey = 'Some key value';
-    let client, createdDataExtensionRowId, createdDataExtensionId;
+    let client, createdDataExtensionId;
 
     before(done => {
-        client = new ET_Client(clientId, clientSecret, origin);
+        client = new ET_Client({clientId, clientSecret, origin, authOrigin});
         const keyField = {Name: 'Key', FieldType: 'Text', IsPrimaryKey: true, IsRequired: true, MaxLength: 100};
         const props = {Name: dataExtensionName, Fields: {Field: [keyField]}};
         client.dataExtension({props}).post((err, response) => {
@@ -37,11 +37,10 @@ describe('DataExtensionRow', function () {
         it('should create', done => {
             const Name = dataExtensionName;
             const props = {
-                Key: dataExtensionRowKey,
+                Key: dataExtensionRowKey
             };
             client.dataExtensionRow({Name, props}).post((err, response) => {
                 if (err) throw new Error(err);
-                createdDataExtensionRowId = response.body.Results[0].NewID;
                 assert.equal(response.res.statusCode, 200);
                 done();
             });
@@ -92,7 +91,7 @@ describe('DataExtensionRow', function () {
         });
         it('should delete it if createdDataExtensionRowId is passed', done => {
             const props = {
-                Key: dataExtensionRowKey,
+                Key: dataExtensionRowKey
             };
             client.dataExtensionRow({props, Name: dataExtensionName}).delete((err, response) => {
                 if (err) throw new Error(err);

@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {clientId, clientSecret, origin} = require('./test.config');
+const {clientId, clientSecret, origin, authOrigin} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
@@ -9,7 +9,7 @@ describe('Subscriber', function () {
     let client, createdSubscriberId;
 
     before(() => {
-        client = new ET_Client(clientId, clientSecret, origin);
+        client = new ET_Client({clientId, clientSecret, origin, authOrigin});
     });
 
     describe('List', () => {
@@ -28,7 +28,7 @@ describe('Subscriber', function () {
         it('should create', done => {
             const props = {
                 SubscriberKey: 'SubscriberKey',
-                EmailAddress: 'sdk-node-test@gmail.com',
+                EmailAddress: 'sdk-node-test@gmail.com'
             };
             client.subscriber({props}).post((err, response) => {
                 if (err) throw new Error(err);
