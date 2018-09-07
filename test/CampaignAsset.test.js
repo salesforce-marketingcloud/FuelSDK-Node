@@ -66,9 +66,8 @@ describe('CampaignAsset', function () {
         });
         it('should error 404 if random id is passed', done => {
             const props = {id: 1234567890, campaignAssetId: 1234567890};
-            client.campaignAsset({props}).get((err, response) => {
-                if (err) throw new Error(err);
-                assert.equal(response.res.statusCode, 400); // api is wrong
+            client.campaignAsset({props}).get(err => {
+                assert.ok(err);
                 done();
             });
         });
@@ -81,19 +80,18 @@ describe('CampaignAsset', function () {
                 done();
             });
         });
-        it('should delete it if createdCampaignId is passed', done => {
+        it('should delete it if createdCampaignAssetId is passed', done => {
             const props = {id: createdCampaignId, assetId: createdAssetId};
             client.campaignAsset({props}).delete(err => {
-                if (err) throw new Error(err);
-                assert(!err);
+                assert(err);
                 done();
             });
         });
         it('should error 404 if random id is passed', done => {
             const props = {id: 1234567890, assetId: 1234567890};
-            client.campaignAsset({props}).delete((err, response) => {
+            client.campaignAsset({props}).delete(err => {
                 if (err) throw new Error(err);
-                assert.equal(response.res.statusCode, 400); // api is wrong
+                assert(err);
                 done();
             });
         });
@@ -112,35 +110,24 @@ describe('CampaignAsset', function () {
 
 
 // HELPER FUNCTIONS
-function createAsset(client) {
+async function createAsset(client) {
     const uri = `${client.restClient.origin}/asset/v1/content/assets`;
     const body = JSON.stringify({name: 'NTO Welcome Series Email', assetType: {name: 'templatebasedemail', id: 207}});
-    return client.restClient.post({uri, body}).then(response => {
-        if (!response.body.id) return Promise.reject(response.body.validationErrors[0].message);
-        return response.body.id;
-    });
+    const response = await client.restClient.post({uri, body});
+    if (!response.body.id) return Promise.reject(response.body.validationErrors[0].message);
+    return response.body.id;
 }
 
-function createCampaign(client) {
-    return new Promise((resolve, reject) => {
-        client.campaign({props: {name: 'Name', description: 'Description'}}).post((err, response) => {
-            if (err) return reject(err);
-            if (!response.body.id) return reject(response.body.validationErrors[0].message);
-            resolve(response.body.id);
-        });
-    })
+async function createCampaign(client) {
+    const body = await client.campaign.create({name: 'Name', description: 'Description'});
+    return body.id;
 }
 
-function deleteAsset(client, assetId) {
+async function deleteAsset(client, assetId) {
     const uri = `${client.restClient.origin}/asset/v1/content/assets/${assetId}`;
-    return client.restClient.delete({uri});
+    await client.restClient.delete({uri});
 }
 
-function deleteCampaign(client, campaignId) {
-    return new Promise((resolve, reject) => {
-        client.campaign({id: campaignId}).delete(err => {
-            if (err) return reject(err);
-            resolve();
-        });
-    })
+async function deleteCampaign(client, campaignId) {
+    await client.campaign.delete(campaignId);
 }

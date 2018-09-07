@@ -22,7 +22,7 @@ describe('Campaign', function () {
     describe('Create', () => {
         const data = {
             name: 'Some test campaign name',
-            description: 'Campaign description',
+            description: 'Campaign description'
         };
         it('should fail if no props passed', async () => {
             await assert.rejects(() => client.campaign.create());
@@ -51,7 +51,7 @@ describe('Campaign', function () {
     describe('Update', () => {
         const newData = {
             name: 'Modified campaign name',
-            description: 'Modified campaign description',
+            description: 'Modified campaign description'
         };
         it('should fail if no props passed', async () => {
             await assert.rejects(() => client.campaign.update());
