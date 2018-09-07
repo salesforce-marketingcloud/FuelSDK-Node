@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {clientId, clientSecret, origin} = require('./test.config');
+const {clientId, clientSecret, origin, authOrigin} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
@@ -9,7 +9,7 @@ describe('OpenEvent', function () {
     let client;
 
     before(() => {
-        client = new ET_Client(clientId, clientSecret, origin);
+        client = new ET_Client({clientId, clientSecret, origin, authOrigin});
     });
 
     describe('Get', () => {

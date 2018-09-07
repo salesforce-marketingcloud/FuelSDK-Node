@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {clientId, clientSecret, origin} = require('./test.config');
+const {clientId, clientSecret, origin, authOrigin} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
@@ -9,7 +9,7 @@ describe('ContentArea', function () {
     let client, createdContentAreaId;
 
     before(() => {
-        client = new ET_Client(clientId, clientSecret, origin);
+        client = new ET_Client({clientId, clientSecret, origin, authOrigin});
     });
 
     describe('List', () => {
@@ -29,7 +29,7 @@ describe('ContentArea', function () {
             const props = {
                 CustomerKey: 'CustomerKey12',
                 Name: 'Some content area name12',
-                Content: 'Some content area description',
+                Content: 'Some content area description'
             };
             client.contentArea({props}).post((err, response) => {
                 if (err) throw new Error(err);
