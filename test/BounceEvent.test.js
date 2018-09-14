@@ -9,7 +9,7 @@ describe('BounceEvent', function () {
     let client;
 
     before(() => {
-        client = new ET_Client({clientId, clientSecret, origin, authOrigin});
+        client = new ET_Client(clientId, clientSecret, origin, authOrigin);
     });
 
     describe('Get', () => {

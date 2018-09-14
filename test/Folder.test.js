@@ -9,7 +9,7 @@ describe('Folder', function () {
     let client, createdFolderId, firstFolderInList;
 
     before(() => {
-        client = new ET_Client({clientId, clientSecret, origin, authOrigin});
+        client = new ET_Client(clientId, clientSecret, origin, authOrigin);
     });
 
     describe('List', () => {

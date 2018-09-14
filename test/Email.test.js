@@ -9,7 +9,7 @@ describe('Email', function () {
     let client, createdEmailId;
 
     before(() => {
-        client = new ET_Client({clientId, clientSecret, origin, authOrigin});
+        client = new ET_Client(clientId, clientSecret, origin, authOrigin);
     });
 
     describe('List', () => {

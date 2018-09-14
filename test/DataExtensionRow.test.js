@@ -11,7 +11,7 @@ describe('DataExtensionRow', function () {
     let client, createdDataExtensionId;
 
     before(done => {
-        client = new ET_Client({clientId, clientSecret, origin, authOrigin});
+        client = new ET_Client(clientId, clientSecret, origin, authOrigin);
         const keyField = {Name: 'Key', FieldType: 'Text', IsPrimaryKey: true, IsRequired: true, MaxLength: 100};
         const props = {Name: dataExtensionName, Fields: {Field: [keyField]}};
         client.dataExtension({props}).post((err, response) => {

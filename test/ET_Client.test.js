@@ -13,13 +13,20 @@ describe('ET_Client', function () {
 
     it('should throw error if origin or other param missing', () => {
         assert.throws(() => {
-            new ET_Client({clientId, clientSecret, authOrigin});
+            new ET_Client(clientId, clientSecret, '', authOrigin);
         })
     });
 
     it('should not throw error if all params defined', () => {
         assert.doesNotThrow(() => {
-            new ET_Client({clientId, clientSecret, origin, authOrigin});
+            new ET_Client(clientId, clientSecret, origin, authOrigin);
+        })
+    });
+
+    it('should not throw error if all params defined in old shape', () => {
+        assert.doesNotThrow(() => {
+            const stack = '';
+            new ET_Client(clientId, clientSecret, stack);
         })
     });
 
