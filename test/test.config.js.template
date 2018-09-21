@@ -1,0 +1,9 @@
+const {ID, SECRET, ORIGIN, AUTH_ORIGIN} = process.env;
+
+
+module.exports = {
+    clientId:     ID          || 'XXXXXXXXXXXXXX',
+    clientSecret: SECRET      || 'XXXXXXXXXXXXXX',
+    origin:       ORIGIN      || 'https://www.exacttargetapis.com',
+    authOrigin:   AUTH_ORIGIN || 'https://auth.exacttargetapis.com'
+};
