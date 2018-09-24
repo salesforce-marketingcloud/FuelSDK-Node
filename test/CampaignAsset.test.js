@@ -92,7 +92,8 @@ describe('CampaignAsset', function () {
 // HELPER FUNCTIONS
 function createAsset(client) {
     const uri = `${client.RestClient.origin}/asset/v1/content/assets`;
-    const body = JSON.stringify({name: 'NTO Welcome Series Email', assetType: {name: 'templatebasedemail', id: 207}});
+    const uniqueString = new Date().getTime();
+    const body = JSON.stringify({name: `NTO Welcome Series Email ${uniqueString}`, assetType: {name: 'templatebasedemail', id: 207}});
     return client.RestClient.post({uri, body}).then(response => {
         if (!response.body.id) return Promise.reject(response.body.validationErrors[0].message);
         return response.body.id;
