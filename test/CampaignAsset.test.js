@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {clientId, clientSecret, origin, authOrigin} = require('./test.config');
+const {clientId, clientSecret, origin, authOrigin, proxy} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
@@ -9,7 +9,7 @@ describe('CampaignAsset', function () {
     let client, createdCampaignId, createdAssetId, createdCampaignAssetId;
 
     before(done => {
-        client = new ET_Client(clientId, clientSecret, origin, authOrigin);
+        client = new ET_Client(clientId, clientSecret, origin, authOrigin, proxy);
         Promise.all([
             createCampaign(client),
             createAsset(client)
@@ -43,7 +43,6 @@ describe('CampaignAsset', function () {
             client.campaignAsset({props}).get((err, response) => {
                 if (err) throw new Error(err);
                 assert.equal(response.res.statusCode, 200);
-                console.log(`response.body`, response.body);
                 assert.equal(response.body.id, createdCampaignAssetId);
                 done();
             });

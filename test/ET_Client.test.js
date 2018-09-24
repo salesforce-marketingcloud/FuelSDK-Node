@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {clientId, clientSecret, origin, authOrigin} = require('./test.config');
+const {clientId, clientSecret, origin, authOrigin, proxy} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
