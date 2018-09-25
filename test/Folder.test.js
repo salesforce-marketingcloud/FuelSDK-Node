@@ -9,7 +9,7 @@ describe('Folder', function () {
     let client, createdFolderId, firstFolderInList;
 
     before(done => {
-        client = new ET_Client(clientId, clientSecret, origin, authOrigin);
+        client = new ET_Client({clientId, clientSecret, origin, authOrigin});
         client.folder({props: ['ID']}).get((err, response) => {
             if (err) throw new Error(err);
             firstFolderInList = response.body.Results[0].ID;
