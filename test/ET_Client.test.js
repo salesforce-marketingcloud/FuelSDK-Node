@@ -11,15 +11,9 @@ describe('ET_Client', function () {
         })
     });
 
-    it('should throw error if origin or other param missing', () => {
-        assert.throws(() => {
-            new ET_Client(clientId, clientSecret, '', authOrigin);
-        })
-    });
-
     it('should not throw error if all params defined', () => {
         assert.doesNotThrow(() => {
-            new ET_Client(clientId, clientSecret, origin, authOrigin);
+            new ET_Client(clientId, clientSecret, null, origin, authOrigin);
         })
     });
 
