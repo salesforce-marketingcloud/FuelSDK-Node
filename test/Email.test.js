@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {clientId, clientSecret, origin, authOrigin} = require('./test.config');
+const {clientId, clientSecret, origin, authOrigin, proxy} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
@@ -9,7 +9,7 @@ describe('Email', function () {
     let client, createdEmailId;
 
     before(() => {
-        client = new ET_Client(clientId, clientSecret, null, origin, authOrigin);
+        client = new ET_Client(clientId, clientSecret, null, origin, authOrigin, proxy);
     });
 
     describe('Post', () => {

@@ -9,7 +9,7 @@ describe('OpenEvent', function () {
     let client;
 
     before(() => {
-        client = new ET_Client(clientId, clientSecret, origin, authOrigin, proxy);
+        client = new ET_Client(clientId, clientSecret, null, origin, authOrigin, proxy);
     });
 
     describe('Get', () => {
