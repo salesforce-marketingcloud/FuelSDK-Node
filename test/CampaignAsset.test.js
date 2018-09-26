@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {clientId, clientSecret, origin, authOrigin, proxy} = require('./test.config');
+const {clientId, clientSecret, origin, authOrigin} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
@@ -9,7 +9,7 @@ describe('CampaignAsset', function () {
     let client, createdCampaignId, createdAssetId, createdCampaignAssetId;
 
     before(done => {
-        client = new ET_Client(clientId, clientSecret, origin, authOrigin, proxy);
+        client = new ET_Client(clientId, clientSecret, null, origin, authOrigin);
         Promise.all([
             createCampaign(client),
             createAsset(client)
@@ -43,6 +43,7 @@ describe('CampaignAsset', function () {
             client.campaignAsset({props}).get((err, response) => {
                 if (err) throw new Error(err);
                 assert.equal(response.res.statusCode, 200);
+                console.log(`response.body`, response.body);
                 assert.equal(response.body.id, createdCampaignAssetId);
                 done();
             });
@@ -91,7 +92,8 @@ describe('CampaignAsset', function () {
 // HELPER FUNCTIONS
 function createAsset(client) {
     const uri = `${client.RestClient.origin}/asset/v1/content/assets`;
-    const body = JSON.stringify({name: 'NTO Welcome Series Email', assetType: {name: 'templatebasedemail', id: 207}});
+    const uniqueString = new Date().getTime();
+    const body = JSON.stringify({name: `NTO Welcome Series Email ${uniqueString}`, assetType: {name: 'templatebasedemail', id: 207}});
     return client.RestClient.post({uri, body}).then(response => {
         if (!response.body.id) return Promise.reject(response.body.validationErrors[0].message);
         return response.body.id;

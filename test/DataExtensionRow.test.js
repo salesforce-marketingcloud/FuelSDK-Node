@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {clientId, clientSecret, origin, authOrigin, proxy} = require('./test.config');
+const {clientId, clientSecret, origin, authOrigin} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
@@ -11,7 +11,7 @@ describe('DataExtensionRow', function () {
     let client, createdDataExtensionId;
 
     before(done => {
-        client = new ET_Client(clientId, clientSecret, origin, authOrigin, proxy);
+        client = new ET_Client(clientId, clientSecret, null, origin, authOrigin);
         const keyField = {Name: 'Key', FieldType: 'Text', IsPrimaryKey: true, IsRequired: true, MaxLength: 100};
         const props = {Name: dataExtensionName, Fields: {Field: [keyField]}};
         client.dataExtension({props}).post((err, response) => {
