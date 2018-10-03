@@ -1,5 +1,37 @@
 # fuelsdk-node
 
+## How to use
+
+##### Step 1. Install the package
+
+```
+npm install --save fuelsdk-node
+```
+
+##### Step 2. Require the client
+```js
+const ET_Client = require('fuelsdk-node');
+```
+
+##### Step 3. Instantiate the SDK
+```js
+const client = new ET_Client(clientId, clientSecret, stack);
+```
+or
+```js
+const client = new ET_Client(clientId, clientSecret, null, origin, authOrigin);
+```
+
+##### Step 4. Consume the objects
+```js
+const props = {
+  name: 'Some test campaign name',
+  description: 'Campaign description'
+};
+client.campaign({props}).post((err, response) => {
+  // code
+});
+```
 
 ## Available objects in this version:
 
@@ -20,8 +52,6 @@
 * Open Event
 * Sent Event
 * Unsub Event
-* SOAP
-* REST
 
 
 ## Usage:
