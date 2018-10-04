@@ -9,7 +9,8 @@ module.exports = {
 	globalReqOptions: {
         proxy: {
             host:     PROXY_HOST || '127.0.0.1',
-            port:     PROXY_PORT || 8888
+            port:     PROXY_PORT || 8888,
+            protocol: 'http:'
         },
         rejectUnauthorized: false
     }
