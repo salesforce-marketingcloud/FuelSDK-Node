@@ -3,3 +3,4 @@ node_modules
 test.config.js
 yarn-error.log
 package-lock.json
+.cache
