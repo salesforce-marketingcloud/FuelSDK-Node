@@ -13,7 +13,7 @@ describe('ET_Client', function () {
 
     it('should not throw error if all params defined', () => {
         assert.doesNotThrow(() => {
-            new ET_Client(clientId, clientSecret, null, origin, authOrigin);
+            new ET_Client(clientId, clientSecret, null, {origin, authOrigin});
         })
     });
 

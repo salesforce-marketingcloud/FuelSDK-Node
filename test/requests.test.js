@@ -34,7 +34,7 @@ describe('requests', function () {
 
     it('If origin is changed incorrectly and so the soap request fails, it should return default soap endpoint', done => {
         const origin = `http://127.0.0.1:${serverErrorPort}/`;
-        const client = new ET_Client(clientId, clientSecret, null, origin, authOrigin, {globalReqOptions});
+        const client = new ET_Client(clientId, clientSecret, null, {origin, authOrigin, globalReqOptions});
         const props = ['ID'];
         client.clickEvent({props}).get((err, response) => {
             if (err) throw new Error(err);

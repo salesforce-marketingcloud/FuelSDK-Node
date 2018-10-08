@@ -9,7 +9,7 @@ describe('ContentArea', function () {
     let client, createdContentAreaId;
 
     before(() => {
-        client = new ET_Client(clientId, clientSecret, null, origin, authOrigin, {globalReqOptions});
+        client = new ET_Client(clientId, clientSecret, null, {origin, authOrigin, globalReqOptions});
     });
 
     describe('Post', () => {
