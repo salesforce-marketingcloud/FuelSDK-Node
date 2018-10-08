@@ -18,9 +18,10 @@
     "mocha": "^5.2.0"
   },
   "dependencies": {
-    "fuel-auth": "^2.0.0",
-    "fuel-rest": "^2.0.0",
-    "fuel-soap": "^1.1.0",
+    "fuel-auth": "^3.1.0",
+    "fuel-rest": "^3.1.0",
+    "fuel-soap": "^2.1.0",
+    "lodash.merge": "^4.6.1",
     "request": "^2.88.0"
   },
   "bugs": {

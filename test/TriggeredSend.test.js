@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {clientId, clientSecret, origin, authOrigin} = require('./test.config');
+const {clientId, clientSecret, origin, authOrigin, globalReqOptions} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
@@ -9,7 +9,7 @@ describe('TriggeredSend', function () {
     let client, createdTriggeredSendId, createdEmailId;
 
     before(done => {
-        client = new ET_Client(clientId, clientSecret, null, origin, authOrigin);
+        client = new ET_Client(clientId, clientSecret, null, origin, authOrigin, {globalReqOptions});
         client.email({props: {CustomerKey: 'CK', Name: 'Nm', Subject: 'Sj', HTMLBody: 'HB'}}).post((err, response) => {
             if (err) throw new Error(err);
             createdEmailId = response.body.Results[0].NewID;
@@ -18,7 +18,7 @@ describe('TriggeredSend', function () {
     })
 
     describe('Post', () => {
-        
+
         it('should create', done => {
             const props = {
                 Name: 'Some triggered send name',
