@@ -19,7 +19,7 @@ const client = new ET_Client(clientId, clientSecret, stack);
 ```
 or
 ```js
-const client = new ET_Client(clientId, clientSecret, null, {origin, authOrigin, soapOrigin, globalReqOptions});
+const client = new ET_Client(clientId, clientSecret, stack, {origin, authOrigin, soapOrigin}); // stack is ignored
 ```
 
 ##### Step 4. Consume the objects
