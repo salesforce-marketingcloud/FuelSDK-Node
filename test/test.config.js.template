@@ -1,4 +1,4 @@
-const {ID, SECRET, ORIGIN, AUTH_ORIGIN} = process.env;
+const {ID, SECRET, ORIGIN, AUTH_ORIGIN, PROXY_HOST, PROXY_PORT} = process.env;
 
 
 module.exports = {
