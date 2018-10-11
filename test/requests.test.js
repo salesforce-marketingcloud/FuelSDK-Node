@@ -37,10 +37,7 @@ describe('requests', function () {
         const client = new ET_Client(clientId, clientSecret, null, {origin, authOrigin, globalReqOptions});
         const props = ['ID'];
         client.clickEvent({props}).get(err => {
-            // TODO: discuss how this should be handled
-            if (err && !(err.message === 'Login Failed' && authOrigin !== 'https://webservice.exacttarget.com/Service.asmx')) {
-                throw new Error(err);
-            }
+            if (err) throw new Error(err);
             done();
         });
     });
