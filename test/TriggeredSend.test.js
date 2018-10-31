@@ -9,7 +9,7 @@ describe('TriggeredSend', function () {
     let client, createdTriggeredSendId, createdEmailId;
 
     before(done => {
-        client = new ET_Client(clientId, clientSecret, null, origin, authOrigin, {globalReqOptions});
+        client = new ET_Client(clientId, clientSecret, null, {origin, authOrigin, globalReqOptions});
         client.email({props: {CustomerKey: 'CK', Name: 'Nm', Subject: 'Sj', HTMLBody: 'HB'}}).post((err, response) => {
             if (err) throw new Error(err);
             createdEmailId = response.body.Results[0].NewID;
