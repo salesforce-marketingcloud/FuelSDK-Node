@@ -1,4 +1,5 @@
 const assert = require('assert');
+const uuidv1 = require('uuid/v1');
 const {clientId, clientSecret, origin, authOrigin, globalReqOptions} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
@@ -19,9 +20,10 @@ describe('Folder', function () {
 
     describe('Post', () => {
         it('should create', done => {
+            const guid = uuidv1();
             const props = {
-                CustomerKey: 'CustomerKey124',
-                Name: 'Some folder name124',
+                CustomerKey: guid,
+                Name: 'Some folder ' + guid,
                 Description: 'Some folder description',
                 ContentType: 'EMAIL',
                 ParentFolder: {ID: firstFolderInList}
