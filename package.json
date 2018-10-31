@@ -22,7 +22,8 @@
     "fuel-rest": "^3.1.0",
     "fuel-soap": "^2.1.0",
     "lodash.merge": "^4.6.1",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "uuid": "^3.3.2"
   },
   "bugs": {
     "url": "https://github.com/salesforcefuel/FuelSDK-Node/issues"

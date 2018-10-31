@@ -1,4 +1,5 @@
 const assert = require('assert');
+const uuidv1 = require('uuid/v1');
 const {clientId, clientSecret, origin, authOrigin, globalReqOptions} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
@@ -15,7 +16,7 @@ describe('Subscriber', function () {
     describe('Post', () => {
         it('should create', done => {
             const props = {
-                SubscriberKey: 'SubscriberKey',
+                SubscriberKey: 'SubscriberKey ' + uuidv1(),
                 EmailAddress: 'sdk-node-test@gmail.com'
             };
             client.subscriber({props}).post((err, response) => {
