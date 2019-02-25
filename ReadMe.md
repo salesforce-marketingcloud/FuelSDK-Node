@@ -14,12 +14,12 @@ The Fuel SDK for Node provides easy access to Salesforce Marketing Cloud's Fuel 
 ##### Step 1. Install the package
 
 ```
-npm install --save fuelsdk-node
+npm install --save sfmc-fuelsdk-node
 ```
 
 ##### Step 2. Require the client
 ```js
-const ET_Client = require('fuelsdk-node');
+const ET_Client = require('sfmc-fuelsdk-node');
 ```
 
 ##### Step 3. Instantiate the SDK
