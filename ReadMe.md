@@ -6,20 +6,23 @@ Salesforce Marketing Cloud Fuel SDK for Node
 ## Overview ##
 The Fuel SDK for Node provides easy access to Salesforce Marketing Cloud's Fuel API Family services, including a collection of REST APIs and a SOAP API. These APIs provide access to Salesforce Marketing Cloud functionality via common collection types. 
 
+## Latest Version 2.2.1 ##
+* Updated the readme file
+
 ## New Features in Version 2.2.0 ##
-* **Added support for your tenant's endpoints - [More Details](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/your-subdomain-tenant-specific-endpoints.htm)
+* Added support for your tenant's endpoints - [More Details](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/your-subdomain-tenant-specific-endpoints.htm)
 
 ## How to use
 
 ##### Step 1. Install the package
 
 ```
-npm install --save fuelsdk-node
+npm install --save sfmc-fuelsdk-node
 ```
 
 ##### Step 2. Require the client
 ```js
-const ET_Client = require('fuelsdk-node');
+const ET_Client = require('sfmc-fuelsdk-node');
 ```
 
 ##### Step 3. Instantiate the SDK
