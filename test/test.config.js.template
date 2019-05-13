@@ -1,4 +1,4 @@
-const {ID, SECRET, ORIGIN, AUTH_ORIGIN, PROXY_HOST, PROXY_PORT} = process.env;
+const {ID, SECRET, ORIGIN, AUTH_ORIGIN, SOAP_ORIGIN, AUTH_OPTIONS, PROXY_HOST, PROXY_PORT} = process.env;
 
 
 module.exports = {
@@ -6,6 +6,12 @@ module.exports = {
     clientSecret: SECRET      || 'XXXXXXXXXXXXXX',
     origin:       ORIGIN      || 'https://www.exacttargetapis.com',
     authOrigin:   AUTH_ORIGIN || 'https://auth.exacttargetapis.com',
+    soapOrigin:   SOAP_ORIGIN || 'https://webservice.exacttarget.com/service.asmx',
+    authOptions: {
+        authVersion: 2, //For OAuth2
+        accountId: <<TARGET_ACCOUNT_ID>>,
+        scope: <<PERMISSIONS>>
+    },
 	globalReqOptions: {
         proxy: {
             host:     PROXY_HOST || '127.0.0.1',

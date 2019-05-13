@@ -1,6 +1,6 @@
 const http = require('http');
 const assert = require('assert');
-const {clientId, clientSecret, origin, authOrigin, globalReqOptions} = require('./test.config');
+const {clientId, clientSecret, origin, authOrigin, soapOrigin, authOptions, globalReqOptions} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
@@ -22,7 +22,7 @@ describe('requests', function () {
 
     it('If SOAP origin is changed, it should response accordingly', done => {
         const soapOrigin = `http://127.0.0.1:${serverPort}/`;
-        const client = new ET_Client(clientId, clientSecret, null, {origin, authOrigin, soapOrigin, globalReqOptions});
+        const client = new ET_Client(clientId, clientSecret, null, {origin, authOrigin, soapOrigin, authOptions, globalReqOptions});
         const props = ['ID'];
         client.clickEvent({props}).get((err, response) => {
             if (err) throw new Error(err);
@@ -34,7 +34,7 @@ describe('requests', function () {
 
     it('If origin is changed incorrectly and so the soap request fails, it should return default soap endpoint', done => {
         const origin = `http://127.0.0.1:${serverErrorPort}/`;
-        const client = new ET_Client(clientId, clientSecret, null, {origin, authOrigin, globalReqOptions});
+        const client = new ET_Client(clientId, clientSecret, null, {origin, authOrigin, soapOrigin, authOptions, globalReqOptions});
         const props = ['ID'];
         client.clickEvent({props}).get(err => {
             if (err) throw new Error(err);

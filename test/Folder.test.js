@@ -1,6 +1,6 @@
 const assert = require('assert');
 const uuidv1 = require('uuid/v1');
-const {clientId, clientSecret, origin, authOrigin, globalReqOptions} = require('./test.config');
+const {clientId, clientSecret, origin, authOrigin, soapOrigin, authOptions, globalReqOptions} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
@@ -10,7 +10,7 @@ describe('Folder', function () {
     let client, createdFolderId, firstFolderInList;
 
     before(done => {
-        client = new ET_Client(clientId, clientSecret, null, {origin, authOrigin, globalReqOptions});
+        client = new ET_Client(clientId, clientSecret, null, {origin, authOrigin, soapOrigin, authOptions, globalReqOptions});
         client.folder({props: ['ID']}).get((err, response) => {
             if (err) throw new Error(err);
             firstFolderInList = response.body.Results[0].ID;
