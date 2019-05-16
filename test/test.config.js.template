@@ -4,11 +4,11 @@ const {ID, SECRET, ORIGIN, AUTH_ORIGIN, SOAP_ORIGIN, AUTH_OPTIONS, PROXY_HOST, P
 module.exports = {
     clientId:     ID          || 'XXXXXXXXXXXXXX',
     clientSecret: SECRET      || 'XXXXXXXXXXXXXX',
-    origin:       ORIGIN      || 'https://www.exacttargetapis.com',
-    authOrigin:   AUTH_ORIGIN || 'https://auth.exacttargetapis.com',
-    soapOrigin:   SOAP_ORIGIN || 'https://webservice.exacttarget.com/service.asmx',
-    authOptions: {
-        authVersion: 2, //For OAuth2
+    origin:       ORIGIN      || 'https://www.exacttargetapis.com', //For Oauth2, Origin should be your Rest Tenant Specific Endpoint
+    authOrigin:   AUTH_ORIGIN || 'https://auth.exacttargetapis.com', //For Oauth2, AuthOrigin  should be your Rest Tenant Specific Endpoint
+    soapOrigin:   SOAP_ORIGIN || 'https://webservice.exacttarget.com/service.asmx', //For Oauth2, SoapOrigin should be your Rest Tenant Specific Endpoint
+    authOptions: { //For OAuth2
+        authVersion: 2, 
         accountId: <<TARGET_ACCOUNT_ID>>,
         scope: <<PERMISSIONS>>
     },
