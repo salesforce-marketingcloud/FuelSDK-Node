@@ -33,7 +33,7 @@ or
 ```js
 const client = new ET_Client(clientId, clientSecret, stack, {origin, authOrigin, soapOrigin}); // stack is ignored
 ```
-##### or (For OAuth2 - Origin/AuthOrigin/SoapOrigin should be your Tenant Specific Endpoints. AuthOrigin is mandatory)
+##### or (For OAuth2 - Origin/AuthOrigin/SoapOrigin should be your [Tenant Specific Endpoints(https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/your-subdomain-tenant-specific-endpoints.htm). AuthOrigin is mandatory)
 ```js
 const client = new ET_Client(clientId, clientSecret, stack, {origin, authOrigin, soapOrigin, authOptions = { authVersion = 2, accountId = <<TARGET_BUSINESS_UNIT>>, scope = <<DATA_ACCESS_PERMISSIONS>>}}); 
 ```
