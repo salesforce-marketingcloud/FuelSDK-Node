@@ -1,5 +1,5 @@
 const assert = require('assert');
-const {clientId, clientSecret, origin, authOrigin, globalReqOptions} = require('./test.config');
+const {clientId, clientSecret, origin, authOrigin, soapOrigin, authOptions, globalReqOptions} = require('./test.config');
 const ET_Client = require('../lib/ET_Client');
 
 
@@ -9,7 +9,7 @@ describe('BounceEvent', function () {
     let client;
 
     before(() => {
-        client = new ET_Client(clientId, clientSecret, null, {origin, authOrigin, globalReqOptions});
+        client = new ET_Client(clientId, clientSecret, null, {origin, authOrigin, soapOrigin, authOptions, globalReqOptions});
     });
 
     describe('Get', () => {
