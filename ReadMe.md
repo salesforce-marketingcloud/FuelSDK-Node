@@ -9,7 +9,7 @@ The Fuel SDK for Node provides easy access to Salesforce Marketing Cloud's Fuel 
 ## Latest Version 2.3.0 ##
 * Added support for OAuth2 Authentication - [More Details](https://developer.salesforce.com/docs/atlas.en-us.mc-app-development.meta/mc-app-development/access-token-s2s.htm)
 
-## New Features in Version 2.2.0 ##
+## Version 2.2.0 ##
 * Added support for your tenant's endpoints - [More Details](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/your-subdomain-tenant-specific-endpoints.htm)
 
 ## How to use
@@ -33,7 +33,7 @@ or
 ```js
 const client = new ET_Client(clientId, clientSecret, stack, {origin, authOrigin, soapOrigin}); // stack is ignored
 ```
-or (For OAuth2 - Origin/AuthOrigin/SoapOrigin should be your Tenant Specific Endpoints. AuthOrigin is mandatory)
+##### or (For OAuth2 - Origin/AuthOrigin/SoapOrigin should be your [Tenant Specific Endpoints](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/your-subdomain-tenant-specific-endpoints.htm). AuthOrigin is mandatory)
 ```js
 const client = new ET_Client(clientId, clientSecret, stack, {origin, authOrigin, soapOrigin, authOptions = { authVersion = 2, accountId = <<TARGET_BUSINESS_UNIT>>, scope = <<DATA_ACCESS_PERMISSIONS>>}}); 
 ```
