@@ -25,7 +25,7 @@ A code snippet that demonstrates the issue or a link to a code repository the de
 Note: Because the developers need to copy and paste the code snippet, including a code snippet as a media file (e.g. gif) is not sufficient.
 
 **Environment**
-- SDK Version [e.g. 1.1.0]
+- SDK Version [e.g. 2.3.0]
 - Node version
 
 **The bug has the severity**
