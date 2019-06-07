@@ -437,28 +437,31 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
 
-fuel-auth@3.1.0, fuel-auth@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/fuel-auth/-/fuel-auth-3.1.0.tgz#914cde147206291a37162e82a43f411be2e1f60c"
+fuel-auth@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/fuel-auth/-/fuel-auth-3.2.1.tgz#d7c268e4c330375a63b85aac76ec99b204555d27"
+  integrity sha512-KNYls7mKssTvoF/hKIUbgr0P2r7c0rePQBeDFGWzBpJJvbrG0O7lAZHp8pwSyN91aaGhfmUiv7E+e7F5bbgfXw==
   dependencies:
     lodash.merge "^4.6.1"
     request "~2.88.0"
 
-fuel-rest@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/fuel-rest/-/fuel-rest-3.1.0.tgz#5edbf76091f9ebb0bc3cf55686d87d6dfd131b0e"
+fuel-rest@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/fuel-rest/-/fuel-rest-3.2.1.tgz#83b0510b54abc490de9d87b44382392789894d07"
+  integrity sha512-F5nvwh8hrx5uLXl2BDSZFeT1D0SNNh8SCfE/Zeyid7E5Zphis02g4Zdq+9P+oVwb7/nx+3nGjCTm5973h6TUkw==
   dependencies:
-    fuel-auth "3.1.0"
+    fuel-auth "^3.2.1"
     lodash.clone "~4.5.0"
     lodash.isplainobject "~4.0.4"
     lodash.merge "^4.6.1"
     request "~2.88.0"
 
-fuel-soap@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/fuel-soap/-/fuel-soap-2.1.0.tgz#1adec287ccee572196fa307011e7e58c4b50a2cd"
+fuel-soap@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/fuel-soap/-/fuel-soap-2.2.1.tgz#68cff84bb24761aad4f3d411faf03c4ae2ea5e40"
+  integrity sha512-IvwOmKamWPxJUmfshoSMfg2RQgfFAdlRWDr8kmbNI2epWHhsUxcjYU18Cd8QP/svY1XPedUct6Bi5IrvGSemAg==
   dependencies:
-    fuel-auth "^3.1.0"
+    fuel-auth "^3.2.1"
     lodash.clone "^4.5.0"
     lodash.isempty "^4.4.0"
     lodash.isplainobject "^4.0.3"
