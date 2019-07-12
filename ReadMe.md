@@ -38,7 +38,9 @@ const client = new ET_Client(clientId, clientSecret, stack, {origin, authOrigin,
 ```
 ##### or (For OAuth2 - Origin/AuthOrigin/SoapOrigin should be your [Tenant Specific Endpoints](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/your-subdomain-tenant-specific-endpoints.htm). AuthOrigin is mandatory)
 ```js
-const client = new ET_Client(clientId, clientSecret, stack, {origin, authOrigin, soapOrigin, authOptions = { authVersion = 2, accountId = <<TARGET_BUSINESS_UNIT>>, scope = <<DATA_ACCESS_PERMISSIONS>>}}); 
+const client = new ET_Client(clientId, clientSecret, stack, {origin, authOrigin, soapOrigin, 
+authOptions = { authVersion = 2, accountId = <<TARGET_BUSINESS_UNIT>>, scope = <<DATA_ACCESS_PERMISSIONS>>, applicationType = <<public||web||server>>, redirectURI = <<REDIRECT_URL_FOR_PUBLIC/WEB_APP, authorizationCode = <<AUTH_CODE_FOR_PUBLIC/WEB_APP>>}
+}); 
 ```
 ##### Step 4. Consume the objects
 ```js
