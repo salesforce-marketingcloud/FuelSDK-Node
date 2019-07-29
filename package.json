@@ -1,6 +1,6 @@
 {
   "name": "sfmc-fuelsdk-node",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "description": "Node SDK for performing REST, SOAP, Auth, and js object API calls with Salesforce Marketing Cloud Fuel.",
   "main": "./lib/ET_Client.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "mocha": "^5.2.0"
   },
   "dependencies": {
-    "fuel-auth": "^3.2.1",
+    "fuel-auth": "^3.3.0",
     "fuel-rest": "^3.2.1",
     "fuel-soap": "^2.2.1",
     "lodash.merge": "^4.6.1",
