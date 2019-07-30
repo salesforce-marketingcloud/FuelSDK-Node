@@ -6,7 +6,7 @@ Salesforce Marketing Cloud Fuel SDK for Node
 ## Overview ##
 The Fuel SDK for Node provides easy access to Salesforce Marketing Cloud's Fuel API Family services, including a collection of REST APIs and a SOAP API. These APIs provide access to Salesforce Marketing Cloud functionality via common collection types. 
 
-## Latest Versuib 2.4.0
+## Latest Version 2.4.0 ##
 * Added support for Public/Web App OAuth2 Authentication. For more details, Check the How to use Section of Readme. 
 
 ## Version 2.3.1 ##
