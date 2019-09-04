@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "fuel-auth": "^3.3.0",
-    "fuel-rest": "^3.2.1",
-    "fuel-soap": "^2.2.1",
+    "fuel-rest": "^3.2.2",
+    "fuel-soap": "^2.2.3",
     "lodash.merge": "^4.6.1",
     "request": "^2.88.0",
     "uuid": "^3.3.2"

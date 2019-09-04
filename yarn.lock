@@ -459,31 +459,31 @@ fs.realpath@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
 
-fuel-auth@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/fuel-auth/-/fuel-auth-3.2.1.tgz#d7c268e4c330375a63b85aac76ec99b204555d27"
-  integrity sha512-KNYls7mKssTvoF/hKIUbgr0P2r7c0rePQBeDFGWzBpJJvbrG0O7lAZHp8pwSyN91aaGhfmUiv7E+e7F5bbgfXw==
+fuel-auth@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/fuel-auth/-/fuel-auth-3.3.0.tgz#8c7c23434a5e07668c6ccb380902550fd89616d1"
+  integrity sha512-ZJSfLmhcTHkY8h9i7Wmb8hebYjC064zLC+LxUaFj78qUQ/T/5v2rVwJ5dtpqhJ6BLwpVepKa0hDMfHak8+WaYA==
   dependencies:
     lodash.merge "^4.6.1"
     request "~2.88.0"
 
-fuel-rest@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/fuel-rest/-/fuel-rest-3.2.1.tgz#83b0510b54abc490de9d87b44382392789894d07"
-  integrity sha512-F5nvwh8hrx5uLXl2BDSZFeT1D0SNNh8SCfE/Zeyid7E5Zphis02g4Zdq+9P+oVwb7/nx+3nGjCTm5973h6TUkw==
+fuel-rest@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/fuel-rest/-/fuel-rest-3.2.2.tgz#d6241c0818e32b03073bc997617d553bb37030d2"
+  integrity sha512-vqCvpOblssPQPLtn9QKCz4pMleRBneUUY0OXQc8tGyv+7qynwpkNw62OJw346RzKG4TtN9EuHb80Cm26aJCz6Q==
   dependencies:
-    fuel-auth "^3.2.1"
+    fuel-auth "^3.3.0"
     lodash.clone "~4.5.0"
     lodash.isplainobject "~4.0.4"
     lodash.merge "^4.6.1"
     request "~2.88.0"
 
-fuel-soap@^2.2.1:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/fuel-soap/-/fuel-soap-2.2.2.tgz#a50168a9b986f9db668888a3a586b9f73a071828"
-  integrity sha512-qqY74DO0ytn+/bSy600bzlCFLkHHdSohX8CqQGcoFynC+v++rO+3kP6S4YLawBMugvEUsu9i2yLLVFrNYmsOgw==
+fuel-soap@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/fuel-soap/-/fuel-soap-2.2.3.tgz#90a7b48c606b4beefa17884a0857b0c697f0aab4"
+  integrity sha512-ELXbNk91HeBEZfJTxNRW73rcd/7iJd3d2u5NegvqJ4Gl55ONok0ilAsdLSthKtw0Ljhx+frkFnjWO0AwETzMUQ==
   dependencies:
-    fuel-auth "^3.2.1"
+    fuel-auth "^3.3.0"
     lodash.clone "^4.5.0"
     lodash.isempty "^4.4.0"
     lodash.isplainobject "^4.0.3"
